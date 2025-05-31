@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/color-mode'
   ],
-
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'en',
@@ -26,7 +25,9 @@ export default defineNuxtConfig({
   },
 
   tailwindcss: {
+    configPath: '~/tailwind.config.js',
     exposeConfig: true,
+    injectPosition: 'first',
     viewer: true
   }
 
