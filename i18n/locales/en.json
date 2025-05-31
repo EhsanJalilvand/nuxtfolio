@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "Hi, I'm {name}",
+    "subtitle": "Creative Frontend Developer",
+    "contact": "Contact Me",
+    "resume": "Download CV"
+  },
+    "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hero": "Hero Section",
+    "Interests": "Interests"
+  },
+  "footer": {
+    "description": "A passionate frontend developer creating modern web experiences.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  },
+  "about": {
+    "title": "About Me",
+    "family": "Family Background",
+    "interests": "Personal Interests",
+    "traits": "Personality Traits"
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Technologies I'm proficient with"
+  },
+  "projects": {
+    "title": "My Projects",
+    "view_all": "View All Projects"
+  }
+}
