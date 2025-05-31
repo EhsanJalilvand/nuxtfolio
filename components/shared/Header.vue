@@ -1,42 +1,61 @@
 <template>
-  <header 
-    class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-white/80 dark:bg-dark/80 shadow-sm transition-all duration-300"
-    :class="{ 'py-2': !isScrolled, 'py-1': isScrolled }"
-  >
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <!-- Logo -->
-      <NuxtLink to="/" class="flex items-center gap-2">
-        <Icon name="heroicons:sparkles" class="w-8 h-8 text-primary" />
-        <span class="text-xl font-bold">Portfolio</span>
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-colors duration-300">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- لوگو/نام -->
+      <NuxtLink 
+        to="/" 
+        class="text-xl font-bold flex items-center gap-2 text-gray-900 dark:text-white"
+      >
+        <Icon name="heroicons:sparkles" class="w-5 h-5 text-primary" />
+        <span>Portfolio</span>
       </NuxtLink>
 
-      <!-- Desktop Navigation -->
+      <!-- منوی دسکتاپ -->
       <nav class="hidden md:flex items-center gap-8">
-        <SharedNavigation />
-        <div class="flex items-center gap-4">
-          <UiDarkModeToggle />
-          <UiLanguageSwitcher />
+        <a 
+          v-for="(item, index) in navItems"
+          :key="index"
+          :href="item.path"
+          class="text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors font-medium"
+          @click.prevent="scrollTo(item.path)"
+        >
+          {{ $t(`nav.${item.key}`) }}
+        </a>
+
+        <div class="flex items-center gap-4 ml-4">
+          <LanguageSwitcher />
+          <DarkModeToggle />
         </div>
       </nav>
 
-      <!-- Mobile Menu Button -->
+      <!-- دکمه منوی موبایل -->
       <button 
-        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-        @click="toggleMenu"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
       >
-        <Icon name="heroicons:bars-3" class="w-6 h-6" />
+        <Icon :name="isMobileMenuOpen ? 'heroicons:x-mark' : 'heroicons:bars-3'" class="w-6 h-6" />
       </button>
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- منوی موبایل -->
     <Transition name="slide-down">
       <div 
-        v-if="isMenuOpen"
-        class="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-dark shadow-lg py-4 px-6">
-        <SharedNavigation @navigate="closeMenu" />
+        v-if="isMobileMenuOpen"
+        class="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-lg py-4 px-6"
+      >
+        <a 
+          v-for="(item, index) in navItems"
+          :key="index"
+          :href="item.path"
+          class="block py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+          @click.prevent="scrollTo(item.path, true)"
+        >
+          {{ $t(`nav.${item.key}`) }}
+        </a>
+
         <div class="flex justify-center gap-4 mt-4">
-          <DarkModeToggle />
           <LanguageSwitcher />
+          <DarkModeToggle />
         </div>
       </div>
     </Transition>
@@ -44,28 +63,45 @@
 </template>
 
 <script setup>
-const isMenuOpen = ref(false)
-const { scrollY } = useScroll()
-const isScrolled = computed(() => scrollY.value > 10)
+const isMobileMenuOpen = ref(false)
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
+const navItems = [
+  { key: 'about', path: '#about' },
+  { key: 'projects', path: '#projects' },
+  { key: 'skills', path: '#skills' },
+  { key: 'contact', path: '#contact' }
+]
 
-const closeMenu = () => {
-  isMenuOpen.value = false
+const scrollTo = (id, closeMenu = false) => {
+  if (closeMenu) {
+    isMobileMenuOpen.value = false
+  }
+  
+  const el = document.querySelector(id)
+  if (el) {
+    window.scrollTo({
+      top: el.offsetTop - 80,
+      behavior: 'smooth'
+    })
+    
+    // برای آپدیت URL بدون ریلود صفحه
+    history.pushState(null, null, id)
+  }
 }
 </script>
 
-<style>
+<style scoped>
 .slide-down-enter-active,
 .slide-down-leave-active {
   transition: all 0.3s ease;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 .slide-down-enter-from,
 .slide-down-leave-to {
-  transform: translateY(-20px);
+  max-height: 0;
   opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

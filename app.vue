@@ -1,13 +1,29 @@
 <template>
-  <div class="min-h-screen bg-light dark:bg-dark transition-colors duration-300">
-    <SharedHeader  />
-    <NuxtPage />
+  <div>
+    <SharedHeader />
+    <main>
+      <NuxtPage />
+    </main>
     <SharedFooter />
-    <UiCustomCursor v-if="!isMobile" />
-    <UiScrollIndicator />
   </div>
 </template>
 
-<script setup>
-const isMobile = useMediaQuery('(max-width: 768px)')
-</script>
+<style>
+/* Basic animations */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
