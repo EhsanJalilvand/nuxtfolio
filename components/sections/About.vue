@@ -6,7 +6,7 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="about-image">
           <img 
-           
+           src="/images/avatar.png"
             alt="Your Name"
             class="rounded-full w-64 h-64 object-cover mx-auto shadow-xl"
           >
