@@ -1,7 +1,7 @@
 <template>
   <div class="relative group">
     <button 
-      class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors dark:text-gray-300 text-gray-700"
       @click="toggleLanguageMenu"
     >
       <Icon name="mdi:translate" class="w-5 h-5" />
@@ -10,13 +10,13 @@
     
     <div 
       v-if="isMenuOpen"
-      class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50 overflow-hidden"
+      class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50 overflow-hidden dark:text-gray-300 text-gray-700"
     >
       <button
         v-for="locale in availableLocales"
         :key="locale.code"
-        class="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-        @click="setLocaleAndClose(locale.code)"
+        class="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors "
+        @click.stop="setLocaleAndClose(locale.code)"
       >
         {{ locale.name }}
       </button>
@@ -39,4 +39,7 @@ const setLocaleAndClose = (code) => {
   setLocale(code)
   isMenuOpen.value = false
 }
+onClickOutside(() => {
+  isMenuOpen.value = false
+});
 </script>

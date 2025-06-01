@@ -22,9 +22,10 @@
           {{ $t(`nav.${item.key}`) }}
         </a>
 
+        <!-- اضافه کردن LanguageSwitcher و DarkModeToggle -->
         <div class="flex items-center gap-4 ml-4">
-          <LanguageSwitcher />
-          <DarkModeToggle />
+          <UiLanguageSwitcher />
+          <UiDarkModeToggle />
         </div>
       </nav>
 
@@ -53,6 +54,7 @@
           {{ $t(`nav.${item.key}`) }}
         </a>
 
+        <!-- اضافه کردن LanguageSwitcher و DarkModeToggle برای موبایل -->
         <div class="flex justify-center gap-4 mt-4">
           <LanguageSwitcher />
           <DarkModeToggle />

@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/color-mode'
   ],
+   colorMode: {
+    classSuffix: '', // مهم: باید خالی باشد
+    preference: 'system', // یا 'light'/'dark'
+    storageKey: 'nuxt-color-mode'
+  },
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'en',
