@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+  <footer class=" dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto dark:text-gray-300">
     <div class="container mx-auto px-4 py-12">
       <!-- بخش اصلی فوتر -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -9,7 +9,7 @@
             <Icon name="heroicons:sparkles" class="w-6 h-6 text-primary" />
             <span class="text-xl font-bold">{{ $t('footer.title') }}</span>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
+          <p class="mb-4">
             {{ $t('footer.description') }}
           </p>
           <div class="flex gap-4">
@@ -33,7 +33,7 @@
             <li v-for="(item, index) in navItems" :key="index">
               <a 
                 :href="item.path" 
-                class="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+                class=" hover:text-primary  dark:hover:text-primary transition-colors"
                 @click.prevent="scrollTo(item.path)"
               >
                 {{ $t(`nav.${item.key}`) }}
@@ -48,13 +48,13 @@
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
               <Icon name="heroicons:envelope" class="w-5 h-5 mt-0.5 text-primary" />
-              <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-300 hover:underline">
+              <a href="mailto:contact@example.com" class=" hover:underline">
                 contact@example.com
               </a>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="heroicons:phone" class="w-5 h-5 mt-0.5 text-primary" />
-              <a href="tel:+989123456789" class="text-gray-600 dark:text-gray-300 hover:underline">
+              <a href="tel:+989123456789" class=" hover:underline">
                 +98 912 345 6789
               </a>
             </li>

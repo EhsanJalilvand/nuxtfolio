@@ -56,8 +56,8 @@
 
         <!-- اضافه کردن LanguageSwitcher و DarkModeToggle برای موبایل -->
         <div class="flex justify-center gap-4 mt-4">
-          <LanguageSwitcher />
-          <DarkModeToggle />
+          <UiLanguageSwitcher  />
+          <UiDarkModeToggle  />
         </div>
       </div>
     </Transition>
@@ -69,8 +69,9 @@ const isMobileMenuOpen = ref(false)
 
 const navItems = [
   { key: 'about', path: '#about' },
-  { key: 'projects', path: '#projects' },
   { key: 'skills', path: '#skills' },
+  { key: 'experience', path: '#experience' },
+  { key: 'projects', path: '#projects' },
   { key: 'contact', path: '#contact' }
 ]
 

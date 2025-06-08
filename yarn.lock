@@ -6311,6 +6311,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+lucide-vue-next@^0.513.0:
+  version "0.513.0"
+  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.513.0.tgz#e864071645efab6ad0671f8b43b7cab643c1f77b"
+  integrity sha512-/J7DB2WBC+UPcRswOfJFXSWt8r5HTMVu0PRkR6e0+Ozx6kLJZv4m71vbT1DS9RCjj0pfuLskWIslSBeeXmg7BA==
+
 luxon@^3.2.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.6.1.tgz#d283ffc4c0076cb0db7885ec6da1c49ba97e47b0"

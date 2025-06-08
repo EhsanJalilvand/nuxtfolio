@@ -1,3 +1,50 @@
 {
-  "welcome": "Welkom"
+  "hero": {
+    "title": "Hallo, I'm {name}",
+    "subtitle": "Creative Frontend Developer",
+    "contact": "Contact Me",
+    "resume": "Download CV"
+  },
+    "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hero": "Hero Section",
+    "Interests": "Interests"
+  },
+  "footer": {
+    "description": "A passionate frontend developer creating modern web experiences.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm Ehsan Jalilvand, a developer passionate about creating. I entered the programming world during university, starting with C# and SQL Server.",
+      "A few years later, I wrote my first software with help from my father, who is a civil engineer - a program specialized for civil engineering tasks.",
+      "I've always loved building new things and experimenting; it doesn't matter what it is - an app, an airplane model, or even a soil-free plant pot!",
+      "I have a great passion for plants and flowers. So much so that many neighbors ask me about their plant problems.",
+      "Alongside work and projects, I live with my lovely wife and have a funny, mischievous dog named Fandogh who is an inseparable part of our home.",
+      "I love learning new things, building useful tools, and spending time with family and nature."
+    ],
+    "interestsTitle": "My Interests",
+    "interests": [
+      "Programming",
+      "Plants & Flowers",
+      "Model Making",
+      "Learning",
+      "Nature Exploration"
+    ]
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Technologies I'm proficient with"
+  },
+  "projects": {
+    "title": "My Projects",
+    "view_all": "View All Projects"
+  }
 }

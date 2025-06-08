@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+    components: true,
     css: [
     '~/assets/css/main.css'
   ],
@@ -13,6 +14,9 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/color-mode'
   ],
+  plugins: [
+  '~/plugins/intersect.js'
+],
    colorMode: {
     classSuffix: '', // مهم: باید خالی باشد
     preference: 'system', // یا 'light'/'dark'
@@ -23,10 +27,15 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
-        { code: 'de', name: 'Deutsch', file: 'en.json' },
+        { code: 'de', name: 'Deutsch', file: 'de.json' },
       { code: 'fa', name: 'فارسی', file: 'fa.json', dir: 'rtl' }
     ],
-    lazy: true
+  lazy: true,
+  detectBrowserLanguage: {
+    useCookie: true,
+    cookieKey: 'i18n_redirected',
+    // redirectOn: 'root'
+  }
   },
 
   tailwindcss: {

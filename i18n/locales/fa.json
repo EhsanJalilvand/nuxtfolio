@@ -1,22 +1,50 @@
 {
   "hero": {
-    "title": "سلام، من {name} هستم",
-    "subtitle": "توسعه دهنده فرانت اند",
-    "contact": "تماس با من",
-    "resume": "دانلود رزومه"
+    "title": "سلام, I'm {name}",
+    "subtitle": "Creative Frontend Developer",
+    "contact": "Contact Me",
+    "resume": "Download CV"
+  },
+    "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hero": "Hero Section",
+    "Interests": "Interests"
+  },
+  "footer": {
+    "description": "A passionate frontend developer creating modern web experiences.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
   },
   "about": {
-    "title": "درباره من",
-    "family": "پس زمینه خانوادگی",
-    "interests": "علایق شخصی",
-    "traits": "ویژگی های شخصیتی"
+    "title": "About Me",
+    "paragraphs": [
+      "من احسان جلیلوند هستم؛ برنامه‌نویس و عاشق ساختن. از دوران دانشگاه وارد دنیای برنامه‌نویسی شدم و کارم رو با زبان C# و بانک اطلاعاتی SQL Server شروع کردم.",
+      "چند سال بعد، اولین نرم‌افزارم رو با کمک پدرم، که تخصصش عمران بود، نوشتم؛ یه برنامه مخصوص کارهای عمرانی.",
+      "همیشه عاشق ساخت چیزای جدید و تجربه کردن بودم؛ فرقی نمی‌کنه چی باشه، یه اپلیکیشن، یه ماکت هواپیما یا حتی یه گلدون بدون خاک!",
+      "علاقه‌ی زیادی به گل و گیاه دارم. اون‌قدر که خیلی از همسایه‌ها راجع‌به مشکل گل و گیاهشون از من می‌پرسن.",
+      "در کنار کار و پروژه، با همسر دوست‌داشتنیم زندگی می‌کنم و یه سگ بامزه و شیطون به اسم فندوق دارم که بخش جدانشدنی خونه‌مونه.",
+      "عاشق یادگرفتن چیزای جدید، ساختن ابزارهای کاربردی و وقت‌گذروندن با خانواده و طبیعت هستم."
+    ],
+    "interestsTitle": "علایق من",
+    "interests": [
+      "برنامه‌نویسی",
+      "گل و گیاه",
+      "ساخت ماکت",
+      "یادگیری",
+      "طبیعت گردی"
+    ]
   },
   "skills": {
-    "title": "مهارت های من",
-    "description": "تکنولوژی هایی که مسلط هستم"
+    "title": "My Skills",
+    "description": "Technologies I'm proficient with"
   },
   "projects": {
-    "title": "پروژه های من",
-    "view_all": "مشاهده همه پروژه ها"
+    "title": "My Projects",
+    "view_all": "View All Projects"
   }
 }

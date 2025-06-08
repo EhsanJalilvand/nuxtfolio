@@ -2,11 +2,9 @@
   <main>
     <SectionsHero />
     <SectionsAbout />
-    <SectionsFamily />
     <SectionsSkills />
     <SectionsExperience />
     <SectionsProjects />
-    <SectionsInterests />
     <SectionsContact />
   </main>
 </template>
