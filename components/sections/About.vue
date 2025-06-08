@@ -1,4 +1,5 @@
 <template>
+
   <section 
     id="about"
     ref="aboutSection"
@@ -6,7 +7,7 @@
   >
     <div class="container mx-auto px-6 md:px-12">
       <div class="flex flex-col md:flex-row items-center gap-12">
-        
+
         <!-- تصویر پروفایل -->
         <div 
           class="relative group w-64 h-64 md:w-80 md:h-80 shrink-0 mx-auto"
