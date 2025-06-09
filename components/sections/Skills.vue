@@ -14,12 +14,11 @@
         </p>
       </div>
 
-      <!-- اینجا کلاس grid به TransitionGroup داده شده -->
       <TransitionGroup
         name="fade-slide"
         tag="div"
         class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 transition-all duration-500"
-        :class="{'opacity-100': isVisible, 'opacity-0 translate-y-8': !isVisible}"
+        :class="{ 'opacity-100': isVisible, 'opacity-0 translate-y-8': !isVisible }"
         style="transition-delay: 300ms"
       >
         <div
@@ -35,43 +34,49 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { TransitionGroup } from 'vue'
 import {
   Code,
-  Cpu,
-  Database,
   Server,
-  Terminal,
-  LayoutDashboard,
+  Database,
+  ShieldCheck,
   Cloud,
-  Monitor,
   GitBranch,
-  Activity,
+  Network,
+  LayoutDashboard,
+  Globe,
   Braces
 } from 'lucide-vue-next'
 
-const { locale, messages } = useI18n()
+import { CpuChipIcon, CommandLineIcon, DocumentTextIcon, RocketLaunchIcon, LanguageIcon } from '@heroicons/vue/24/outline'
 
 const skillsSection = ref(null)
 const isVisible = ref(false)
 
 const skills = [
-  { name: 'C#', icon: Code },
-  { name: 'Vue.js', icon: Monitor },
-  { name: 'Nuxt', icon: Cloud },
-  { name: 'WPF', icon: LayoutDashboard },
-  { name: 'Microservices', icon: Server },
-  { name: 'SQL Server', icon: Database },
-  { name: 'Docker', icon: Activity },
-  { name: 'Kubernetes', icon: Cloud },
-  { name: 'Git', icon: GitBranch },
-  { name: 'Linux', icon: Terminal },
-  { name: 'Clean Architecture', icon: Braces },
-  { name: 'REST API', icon: Cpu }
+  { name: 'ASP.NET Core WebAPI / Hangfire / Quartz.NET', icon: Network },
+  { name: 'OAuth2 / JWT', icon: ShieldCheck },
+  { name: 'Microservices Architecture (RabbitMQ, gRPC, CQRS)', icon: Cloud },
+  { name: 'Backend Security Controls', icon: ShieldCheck },
+  { name: 'Clean Architecture / Mediator Pattern', icon: Braces },
+  
+  { name: 'Docker & CI/CD Pipelines', icon: RocketLaunchIcon },
+
+  { name: 'SQL Server & Relational Database Design', icon: Database },
+
+   { name: 'Node.js / Express / MongoDB', icon: CpuChipIcon },
+  { name: 'Vue.js / Nuxt.js', icon: CommandLineIcon },
+
+  { name: 'Windows Forms / WPF / MVVM', icon: LayoutDashboard },
+
+{ name: 'Git / Version Control & Agile / Scrum', icon: GitBranch },
+ 
+
+  { name: 'English (Reading/Writing) & German (B2)', icon: LanguageIcon }
 ]
+
 
 const checkVisibility = () => {
   if (skillsSection.value) {
