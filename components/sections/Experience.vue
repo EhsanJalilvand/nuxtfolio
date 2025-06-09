@@ -64,72 +64,46 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const experiences = ref([
-  {
-    id: 1,
-    position: 'Senior .NET Developer | ASP.NET Core | C#',
-    company: 'Tehran Stock Exchange',
-    location: 'Tehran, Iran',
-    startDate: '2020-01-01',
-    endDate: null,
-    description: [
-      'Designed real-time data ingestion system using MMTP, processing 2 million+ messages daily.',
-      'Built distributed SQL storage for high availability and fast data retrieval.',
-      'Developed document submission system with EF Core (Code-First) and RESTful APIs, improving workflow by 30%.',
-      'Led redesign of tse.ir website supporting 10,000+ concurrent users using microservices architecture.',
-      'Architected custom CMS with IdentityServer4 (OAuth2), Redis caching, RabbitMQ, Clean Architecture & MediatR.',
-    ],
-  },
-  {
-    id: 2,
-    position: 'Full Stack Developer',
-    company: 'PayamGostar',
-    location: 'Tehran Province, Iran',
-    startDate: '2017-09-01',
-    endDate: '2019-09-30',
-    description: [
-      'Developed WCF-based CRM synchronization services enabling real-time bidirectional communication.',
-      'Enhanced data consistency and integration across multiple financial software systems.',
-    ],
-  },
-  {
-    id: 3,
-    position: 'Software Developer',
-    company: 'Saina Software Solutions',
-    location: 'On-site, Iran',
-    startDate: '2013-06-01',
-    endDate: '2017-01-31',
-    description: [
-      'Designed scalable application framework with dynamic column and record-level access control.',
-      'Automated CRUD operations and standardized UI using custom user controls.',
-      'Developed financial software suite (accounting, payroll, asset management) using WPF & EF Core.',
-    ],
-  },
-  {
-    id: 4,
-    position: 'Windows Application Developer (Freelance)',
-    company: 'Freelance',
-    location: 'Tehran Province, Iran',
-    startDate: '2010-01-01',
-    endDate: '2012-12-31',
-    description: [
-      'Developed civil engineering software with Windows Forms, SQL Server, and ADO.NET.',
-      'Implemented modules for project setup, BOQ management, progress reporting, and cost control.',
-    ],
-  },
-])
+function deepExtractStatics(value) {
+  if (Array.isArray(value)) {
+    return value.map(deepExtractStatics)
+  } else if (typeof value === 'object' && value !== null) {
+    if (value.body && typeof value.body.static === 'string') {
+      return value.body.static
+    } else {
+      const result = {}
+      for (const key in value) {
+        result[key] = deepExtractStatics(value[key])
+      }
+      return result
+    }
+  }
+  return value
+}
+
+const { locale, getLocaleMessage } = useI18n() // 👈 اینجا یادت رفته بود
+
+const experiences = computed(() => {
+  const items = getLocaleMessage(locale.value)?.experience?.items || []
+  return deepExtractStatics(items)
+})
 
 const show = ref(Array(experiences.value.length).fill(false))
 
 function formatDateDisplay(dateStr) {
+  if (!dateStr) return ''
   const d = new Date(dateStr)
+  if (isNaN(d)) return ''
   return d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short' })
 }
 
 function dateRange(start, end) {
-  return `${formatDateDisplay(start)} - ${end ? formatDateDisplay(end) : 'Present'}`
+  const startDate = formatDateDisplay(start)
+  const endDate = end ? formatDateDisplay(end) : 'Present'
+  return `${startDate || 'Unknown'} - ${endDate || 'Unknown'}`
 }
 </script>
 

@@ -22,7 +22,7 @@
         style="transition-delay: 300ms"
       >
         <div
-          v-for="(skill, index) in skills"
+          v-for="skill in skills"
           :key="skill.name"
           class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition duration-300"
         >
@@ -36,21 +36,17 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { TransitionGroup } from 'vue'
 import {
-  Code,
-  Server,
   Database,
   ShieldCheck,
   Cloud,
   GitBranch,
   Network,
   LayoutDashboard,
-  Globe,
   Braces
 } from 'lucide-vue-next'
 
-import { CpuChipIcon, CommandLineIcon, DocumentTextIcon, RocketLaunchIcon, LanguageIcon } from '@heroicons/vue/24/outline'
+import { CpuChipIcon, CommandLineIcon, RocketLaunchIcon, LanguageIcon } from '@heroicons/vue/24/outline'
 
 const skillsSection = ref(null)
 const isVisible = ref(false)

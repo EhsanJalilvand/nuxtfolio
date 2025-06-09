@@ -12,13 +12,13 @@
       <p 
         class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-4 animate-fade-in animate-delay-200"
       >
-         A Fullstack Developer always curious and eager to learn
+      {{ $t('hero.subtitle') }}
       </p>
 
       <p 
         class="text-base md:text-lg text-gray-500 dark:text-gray-400 mb-8 animate-fade-in animate-delay-300"
       >
-        I build scalable, clean and efficient web applications
+        {{ $t('hero.description') }}
       </p>
 
       <!-- دکمه‌ها -->
@@ -34,7 +34,7 @@
           @click="downloadResume"
           class="px-6 py-3 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition-colors"
         >
-          Download Resume
+         {{ $t('hero.downloadResume') }}
         </button>
       </div>
     </div>
@@ -45,7 +45,7 @@
 const downloadResume = () => {
   const link = document.createElement('a')
   link.href = '/resume.pdf'
-  link.download = 'Ehsan_Resume.pdf' // اسم خودت
+  link.download = 'Ehsan_Jalilvand_Resume.pdf'
   link.click()
 }
 </script>
