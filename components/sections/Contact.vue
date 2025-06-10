@@ -40,12 +40,15 @@
               ></textarea>
             </div>
             
-            <button
-              type="submit"
-              class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all"
-            >
-              {{ $t('contact.form.submit') }}
-            </button>
+<button
+  type="submit"
+  class="px-8 py-3 bg-primary text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-primary/80 hover:shadow-xl active:scale-95 transition-all duration-200 ease-in-out"
+>
+  {{ $t('contact.form.submit') }}
+</button>
+
+
+
           </form>
         </div>
         

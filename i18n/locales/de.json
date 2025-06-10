@@ -1,50 +1,127 @@
 {
   "hero": {
-    "title": "Hallo, I'm {name}",
-    "subtitle": "Creative Frontend Developer",
-    "contact": "Contact Me",
-    "resume": "Download CV"
+    "title": "Hallo, ich bin Ehsan Jalilvand",
+    "subtitle": "Ein Senior .NET-Entwickler mit Fullstack-Erfahrung, immer neugierig und lernbegierig",
+    "description": "Ich baue skalierbare, saubere und effiziente Webanwendungen",
+    "contact": "Kontakt",
+    "downloadResume": "Lebenslauf herunterladen"
   },
-    "nav": {
-    "home": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "skills": "Skills",
-    "contact": "Contact",
-    "hero": "Hero Section",
-    "Interests": "Interests"
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt",
+    "experience": "Berufserfahrung"
   },
   "footer": {
-    "description": "A passionate frontend developer creating modern web experiences.",
-    "quickLinks": "Quick Links",
-    "contact": "Contact",
-    "copyright": "All rights reserved."
+    "title": "Portfolio",
+    "description": "Ein leidenschaftlicher Frontend-Entwickler, der moderne Web-Erlebnisse schafft.",
+    "quickLinks": "Schnellzugriff",
+    "contact": "Kontakt",
+    "copyright": "Alle Rechte vorbehalten."
   },
   "about": {
-    "title": "About Me",
+    "title": "Über mich",
     "paragraphs": [
-      "I'm Ehsan Jalilvand, a developer passionate about creating. I entered the programming world during university, starting with C# and SQL Server.",
-      "A few years later, I wrote my first software with help from my father, who is a civil engineer - a program specialized for civil engineering tasks.",
-      "I've always loved building new things and experimenting; it doesn't matter what it is - an app, an airplane model, or even a soil-free plant pot!",
-      "I have a great passion for plants and flowers. So much so that many neighbors ask me about their plant problems.",
-      "Alongside work and projects, I live with my lovely wife and have a funny, mischievous dog named Fandogh who is an inseparable part of our home.",
-      "I love learning new things, building useful tools, and spending time with family and nature."
+      "Ich bin Ehsan Jalilvand, ein Entwickler mit Leidenschaft für das Erschaffen. Ich bin während des Studiums in die Welt der Programmierung eingestiegen, begann mit C# und SQL Server.",
+      "Ich habe meinen Bachelor-Abschluss in Computertechnik gemacht, was mir eine solide Grundlage für die Arbeit an realen Softwareprojekten gegeben hat.",
+      "Einige Jahre später schrieb ich meine erste Software mit Hilfe meines Vaters, der Bauingenieur ist - ein Programm spezialisiert auf Bauingenieuraufgaben.",
+      "Ich habe es immer geliebt, neue Dinge zu bauen und zu experimentieren; es ist egal, was es ist - eine App, ein Flugzeugmodell oder sogar ein blumenkasten ohne Erde!",
+      "Ich habe eine große Leidenschaft für Pflanzen und Blumen. So sehr, dass viele Nachbarn mich wegen ihrer Pflanzenprobleme fragen.",
+      "Neben Arbeit und Projekten lebe ich mit meiner liebenswerten Frau und habe einen lustigen, frechen Hund namens Fandogh, der ein untrennbarer Teil unseres Zuhauses ist.",
+      "Ich liebe es, neue Dinge zu lernen, nützliche Tools zu bauen und Zeit mit Familie und Natur zu verbringen."
     ],
-    "interestsTitle": "My Interests",
+    "interestsTitle": "Meine Interessen",
     "interests": [
-      "Programming",
-      "Plants & Flowers",
-      "Model Making",
-      "Learning",
-      "Nature Exploration"
+      "Programmierung",
+      "Pflanzen & Blumen",
+      "Modellbau",
+      "Lernen",
+      "Naturerkundung"
     ]
   },
   "skills": {
-    "title": "My Skills",
-    "description": "Technologies I'm proficient with"
+    "title": "Meine Fähigkeiten",
+    "subtitle": "Die Werkzeuge und Technologien, mit denen ich arbeite",
+    "description": "Technologien, in denen ich versiert bin"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "items": [
+      {
+        "id": 1,
+        "position": "Senior .NET-Entwickler",
+        "company": "Teheraner Börse",
+        "location": "Teheran, Iran",
+        "startDate": "2020-01-01",
+        "endDate": null,
+        "description": [
+          "Entwurf eines Echtzeit-Datenerfassungssystems mit MMTP, das täglich über 2 Millionen Nachrichten verarbeitet.",
+          "Aufbau eines verteilten SQL-Speichers für hohe Verfügbarkeit und schnellen Datenabruf.",
+          "Entwicklung eines Dokumenteneinreichungssystems mit EF Core (Code-First) und RESTful APIs, das den Workflow um 30% verbesserte.",
+          "Leitung der Neugestaltung der Website tse.ir mit Unterstützung für über 10.000 gleichzeitige Benutzer unter Verwendung einer Microservices-Architektur.",
+          "Architektur eines benutzerdefinierten CMS mit IdentityServer4 (OAuth2), Redis-Caching, RabbitMQ, Clean Architecture & MediatR."
+        ]
+      },
+      {
+        "id": 2,
+        "position": "Full Stack Entwickler",
+        "company": "PayamGostar",
+        "location": "Teheran, Iran",
+        "startDate": "2017-09-01",
+        "endDate": "2019-09-30",
+        "description": [
+          "Entwicklung von WCF-basierten CRM-Synchronisationsdiensten, die bidirektionale Echtzeitkommunikation ermöglichten.",
+          "Verbesserung der Datenkonsistenz und Integration über mehrere Finanzsoftware-Systeme hinweg."
+        ]
+      },
+      {
+        "id": 3,
+        "position": "Softwareentwickler",
+        "company": "Saina Software Solutions",
+        "location": "Iran",
+        "startDate": "2013-06-01",
+        "endDate": "2017-01-31",
+        "description": [
+          "Entwurf eines skalierbaren Anwendungsframeworks mit dynamischer Spalten- und datensatzbezogener Zugriffskontrolle.",
+          "Automatisierung von CRUD-Operationen und Standardisierung der Benutzeroberfläche mit benutzerdefinierten Steuerelementen.",
+          "Entwicklung einer Finanzsoftware-Suite (Buchhaltung, Gehaltsabrechnung, Vermögensverwaltung) mit WPF & EF Core."
+        ]
+      },
+      {
+        "id": 4,
+        "position": "Windows-Anwendungsentwickler (Freiberuflich)",
+        "company": "Freiberuflich",
+        "location": "Teheran, Iran",
+        "startDate": "2010-01-01",
+        "endDate": "2012-12-31",
+        "description": [
+          "Entwicklung von Bauingenieursoftware mit Windows Forms, SQL Server und ADO.NET.",
+          "Implementierung von Modulen für Projekteinrichtung, Leistungsverzeichnisverwaltung, Fortschrittsberichterstattung und Kostenkontrolle."
+        ]
+      }
+    ]
   },
   "projects": {
-    "title": "My Projects",
-    "view_all": "View All Projects"
+    "title": "Meine Projekte",
+    "github": "GitHub",
+    "preview": "Vorschau",
+    "originalCertificate": "Originalzertifikat",
+    "certificate": "Beglaubigte Übersetzung"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden"
+    },
+    "info": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Standort"
+    }
   }
 }

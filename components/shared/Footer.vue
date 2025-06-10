@@ -13,14 +13,9 @@
             {{ $t('footer.description') }}
           </p>
           <div class="flex gap-4">
-            <a 
-              v-for="social in socialLinks"
-              :key="social.name"
-              :href="social.url"
-              target="_blank"
+            <a v-for="social in socialLinks" :key="social.name" :href="social.url" target="_blank"
               class="p-2 rounded-full bg-white dark:bg-gray-800 shadow hover:shadow-md transition-all"
-              :aria-label="social.name"
-            >
+              :aria-label="social.name">
               <Icon :name="social.icon" class="w-5 h-5" />
             </a>
           </div>
@@ -31,11 +26,8 @@
           <h3 class="text-lg font-semibold mb-4">{{ $t('footer.quickLinks') }}</h3>
           <ul class="space-y-2">
             <li v-for="(item, index) in navItems" :key="index">
-              <a 
-                :href="item.path" 
-                class=" hover:text-primary  dark:hover:text-primary transition-colors"
-                @click.prevent="scrollTo(item.path)"
-              >
+              <a :href="item.path" class=" hover:text-primary  dark:hover:text-primary transition-colors"
+                @click.prevent="scrollTo(item.path)">
                 {{ $t(`nav.${item.key}`) }}
               </a>
             </li>
@@ -49,13 +41,19 @@
             <li class="flex items-start gap-3">
               <Icon name="heroicons:envelope" class="w-5 h-5 mt-0.5 text-primary" />
               <a href="mailto:contact@example.com" class=" hover:underline">
-                contact@example.com
+                ehsan.jalilvand.dev@gmail.com
               </a>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="heroicons:phone" class="w-5 h-5 mt-0.5 text-primary" />
-              <a href="tel:+989123456789" class=" hover:underline">
-                +98 912 345 6789
+              <a href="tel:+989124346824" class=" hover:underline">
+                +98 912 434 6824
+              </a>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="mdi:telegram" class="w-5 h-5 mt-0.5 text-primary" />
+              <a href="https://t.me/Ehsan_jalilvand" target="_blank" rel="noopener" class="hover:underline">
+                t.me/Ehsan_jalilvand
               </a>
             </li>
           </ul>
@@ -74,16 +72,16 @@
 // استفاده از همان navItems که در هدر تعریف شده
 const navItems = [
   { key: 'about', path: '#about' },
-  { key: 'projects', path: '#projects' },
+  { key: 'experience', path: '#experience' },
   { key: 'skills', path: '#skills' },
+  { key: 'projects', path: '#projects' },
   { key: 'contact', path: '#contact' }
 ]
 
 const socialLinks = [
-  { name: 'GitHub', icon: 'mdi:github', url: 'https://github.com' },
-  { name: 'LinkedIn', icon: 'mdi:linkedin', url: 'https://linkedin.com' },
-  { name: 'Twitter', icon: 'mdi:twitter', url: 'https://twitter.com' },
-  { name: 'Instagram', icon: 'mdi:instagram', url: 'https://instagram.com' }
+  { name: 'GitHub', icon: 'mdi:github', url: 'https://github.com/EhsanJalilvand/' },
+  { name: 'LinkedIn', icon: 'mdi:linkedin', url: 'https://www.linkedin.com/in/ehsan-jalilvand/' },
+  { name: 'Instagram', icon: 'mdi:instagram', url: 'https://www.instagram.com/ehsan.jalilvand.dev/' }
 ]
 
 // تابع اسکرول مشابه هدر

@@ -2,8 +2,8 @@
   <main>
     <SectionsHero />
     <SectionsAbout />
-    <SectionsSkills />
     <SectionsExperience />
+    <SectionsSkills />
     <SectionsProjects />
     <SectionsContact />
   </main>
