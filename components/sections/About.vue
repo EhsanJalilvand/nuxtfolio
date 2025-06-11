@@ -1,7 +1,7 @@
 <template>
   <section 
     id="about"
-    ref="aboutSection"
+    v-intersect="onSectionIntersect"
     class="py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden"
   >
     <div class="container mx-auto px-6 md:px-12">
@@ -9,7 +9,6 @@
         {{ $t('about.title') }}
       </h2>
       <div class="flex flex-col md:flex-row items-center gap-12">
-
 
         <!-- Profile Image with gradient glow -->
         <div 
@@ -32,8 +31,6 @@
           :class="{ 'opacity-100 translate-x-0': isTextVisible, 'opacity-0 translate-x-10': !isTextVisible }"
           style="transition: opacity 0.7s ease, transform 0.7s ease;"
         >
-
-
           <div class="space-y-5 text-gray-700 dark:text-gray-300 text-justify">
             <p 
               v-for="(paragraph, index) in aboutParagraphs"
@@ -68,55 +65,26 @@
 </template>
 
 <script setup>
-
+// i18n composable
 import { useI18n } from 'vue-i18n';
 
 const { locale, messages } = useI18n();
-const aboutSection = ref(null);
 
-// Reactive flags to control visibility and animation states
+// Reactive states to control animation visibility
 const isImageVisible = ref(false);
 const isTextVisible = ref(false);
 
-// Computed properties for paragraphs and interests from i18n messages
+// Computed data for text content from i18n
 const aboutParagraphs = computed(() => messages.value[locale.value].about.paragraphs.map(p => p.body.static));
 const aboutInterests = computed(() => messages.value[locale.value].about.interests.map(p => p.body.static));
 
-let observer = null;
-
 /**
- * Intersection Observer callback function
- * Toggles visibility flags when the about section enters or leaves the viewport
+ * Called when the about section intersects with the viewport
  */
-const handleIntersect = (entries) => {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    // Section is visible: show image immediately, then text with delay
-    isImageVisible.value = true;
-    setTimeout(() => {
-      isTextVisible.value = true;
-    }, 300);
-  } 
+const onSectionIntersect = () => {
+  isImageVisible.value = true;
+  setTimeout(() => {
+    isTextVisible.value = true;
+  }, 300);
 };
-
-onMounted(() => {
-  // Initialize IntersectionObserver with 15% visibility threshold
-  observer = new IntersectionObserver(handleIntersect, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15,
-  });
-
-  if (aboutSection.value) {
-    observer.observe(aboutSection.value);
-  }
-});
-
-onBeforeUnmount(() => {
-  // Cleanup observer to avoid memory leaks
-  if (observer && aboutSection.value) {
-    observer.unobserve(aboutSection.value);
-    observer.disconnect();
-  }
-});
 </script>

@@ -1,10 +1,7 @@
 <template>
-  <section
-    id="skills"
-    class="py-16 md:py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden"
-    ref="skillsSection"
-  >
+  <section id="skills" class="py-16 md:py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden">
     <div class="container mx-auto px-4">
+      <!-- Section Title -->
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
           {{ $t('skills.title') }}
@@ -14,19 +11,16 @@
         </p>
       </div>
 
-      <TransitionGroup
-        name="fade-slide"
-        tag="div"
-        class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 transition-all duration-500"
-        :class="{ 'opacity-100': isVisible, 'opacity-0 translate-y-8': !isVisible }"
-        style="transition-delay: 300ms"
-      >
-        <div
-          v-for="skill in skills"
-          :key="skill.name"
-          class="flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition duration-300"
-        >
+      <!-- Skills Grid -->
+      <TransitionGroup name="fade-slide" tag="div"
+        class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 transition-all duration-500">
+        <div v-for="(skill, index) in skills" :key="skill.name" v-intersect="() => show[index] = true" :class="[
+          'flex items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition duration-300',
+          show[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        ]" :style="{ transitionDelay: (index * 70) + 'ms' }">
+          <!-- Skill Icon -->
           <component :is="skill.icon" class="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3" />
+          <!-- Skill Name -->
           <span class="text-gray-800 dark:text-gray-200 font-medium">{{ skill.name }}</span>
         </div>
       </TransitionGroup>
@@ -35,6 +29,7 @@
 </template>
 
 <script setup>
+// Import icons from libraries
 import {
   Database,
   ShieldCheck,
@@ -44,14 +39,14 @@ import {
   LayoutDashboard,
   Braces
 } from 'lucide-vue-next'
-import { CpuChipIcon, CommandLineIcon, RocketLaunchIcon, LanguageIcon } from '@heroicons/vue/24/outline'
+import {
+  CpuChipIcon,
+  CommandLineIcon,
+  RocketLaunchIcon,
+  LanguageIcon
+} from '@heroicons/vue/24/outline'
 
-// Reference to the skills section DOM element
-const skillsSection = ref(null)
-// State to track visibility of the skills section
-const isVisible = ref(false)
-
-// List of skills with associated icons
+// List of skills with their associated icons
 const skills = [
   { name: 'ASP.NET Core WebAPI / Hangfire / Quartz.NET', icon: Network },
   { name: 'OAuth2 / JWT', icon: ShieldCheck },
@@ -67,58 +62,32 @@ const skills = [
   { name: 'English (Reading/Writing) & German (B2)', icon: LanguageIcon }
 ]
 
-// IntersectionObserver instance
-let observer = null
-
-onMounted(() => {
-  // Only run on client and if IntersectionObserver is supported
-  if (typeof window !== 'undefined' && 'IntersectionObserver' in window && skillsSection.value) {
-    observer = new IntersectionObserver(
-      (entries) => {
-        // If the skills section is intersecting viewport, set visibility to true
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            isVisible.value = true
-            observer.unobserve(entry.target) // Unobserve after first reveal
-          }
-        })
-      },
-      {
-        root: null, // viewport
-        threshold: 0.2 // 20% visible triggers visibility
-      }
-    )
-    observer.observe(skillsSection.value)
-  } else {
-    // Fallback: if no IntersectionObserver, show content immediately
-    isVisible.value = true
-  }
-})
-
-onUnmounted(() => {
-  if (observer && skillsSection.value) {
-    observer.unobserve(skillsSection.value)
-  }
-})
+// State to track visibility for each skill card
+const show = ref(Array(skills.length).fill(false))
 </script>
 
 <style scoped>
+/* Transition for fade and slide */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition: all 1.5s ease;
+  transition: all 1.2s ease;
 }
+
 .fade-slide-enter-from {
   opacity: 0;
   transform: translateY(20px);
 }
+
 .fade-slide-enter-to {
   opacity: 1;
   transform: translateY(0);
 }
+
 .fade-slide-leave-from {
   opacity: 1;
   transform: translateY(0);
 }
+
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateY(20px);

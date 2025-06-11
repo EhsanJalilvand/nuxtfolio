@@ -2,39 +2,50 @@
   <section
     id="projects"
     class="py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden"
-    ref="projectsSection"
   >
     <div class="container mx-auto px-6 md:px-12">
-      <h2
-        class="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-12"
-      >
+      <!-- Section Title -->
+      <h2 class="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-12">
         {{ $t('projects.title') }}
       </h2>
 
+      <!-- Projects Grid -->
       <TransitionGroup
         name="fade-only"
         tag="div"
         class="flex flex-wrap justify-center gap-8"
       >
         <div
-          v-for="(project, index) in visibleProjects"
+          v-for="(project, index) in projects"
           :key="project.title"
-          class="w-full md:w-[45%] lg:w-[30%] bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6"
+
+          v-intersect="() => show[index] = true"
+
+          :class="[
+            'w-full md:w-[45%] lg:w-[30%] bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 transition duration-500',
+            show[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          ]"
+
           :style="{ transitionDelay: (index * 200) + 'ms' }"
         >
+          <!-- Icon -->
           <div class="text-5xl text-blue-600 mb-3">
             <component :is="project.icon" />
           </div>
-          <h3
-            class="text-2xl font-semibold text-gray-800 dark:text-white mb-2"
-          >
+
+          <!-- Title -->
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
             {{ project.title }}
           </h3>
-           <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
-              {{ project.description }}
-            </p>
-                          <div class="flex flex-wrap gap-3">
-           <a
+
+          <!-- Description -->
+          <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+            {{ project.description }}
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-3">
+            <a
               v-if="project.github"
               :href="project.github"
               target="_blank"
@@ -58,19 +69,18 @@
               download
               class="flex items-center gap-2 px-3 py-2 bg-gray-900 text-white rounded-lg text-sm hover:bg-gray-800 transition"
             >
-              <Download class="w-4 h-4" />{{ $t('projects.originalCertificate') }} 
+              <Download class="w-4 h-4" />{{ $t('projects.originalCertificate') }}
             </a>
-          <a
+
+            <a
               v-if="project.certificate"
               :href="project.certificate"
               download
               class="flex items-center gap-2 px-3 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition"
             >
-              <Download class="w-4 h-4" />{{ $t('projects.certificate') }} 
+              <Download class="w-4 h-4" />{{ $t('projects.certificate') }}
             </a>
-
-              
-            </div>
+          </div>
         </div>
       </TransitionGroup>
     </div>
@@ -78,6 +88,7 @@
 </template>
 
 <script setup>
+// Import icons
 import {
   Building2,
   Store,
@@ -89,7 +100,8 @@ import {
   Download
 } from 'lucide-vue-next'
 
-const allProjects = [
+// List of all projects
+const projects = [
   {
     title: 'General Civil Software Saina',
     description: 'C#, Windows Forms, SQL Server, ADO.NET',
@@ -98,10 +110,10 @@ const allProjects = [
     icon: Building2,
   },
   {
-    title: ' DorTaak Store App',
+    title: 'DorTaak Store App',
     description: 'C#, WPF, Prism, SQL Server, Entity Framework',
     certificate: '/Software-Registrierungszertifikat2.pdf',
-     originalCertificate: '/Software-Registrierungszertifikat2.pdf',
+    originalCertificate: '/Software-Registrierungszertifikat2.pdf',
     icon: Store,
   },
   {
@@ -127,26 +139,12 @@ const allProjects = [
   },
 ]
 
-const visibleProjects = ref([])
-const projectsSection = ref(null)
-
-onMounted(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && visibleProjects.value.length === 0) {
-        visibleProjects.value = allProjects
-        observer.unobserve(entry.target)
-      }
-    })
-  })
-
-  if (projectsSection.value) {
-    observer.observe(projectsSection.value)
-  }
-})
+// Track visibility for each project card
+const show = ref(Array(projects.length).fill(false))
 </script>
 
 <style scoped>
+/* Fade-only transition */
 .fade-only-enter-from {
   opacity: 0;
   transform: translateY(20px);
