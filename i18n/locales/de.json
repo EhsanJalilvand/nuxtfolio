@@ -4,7 +4,10 @@
     "subtitle": "Ein Senior .NET-Entwickler mit Fullstack-Erfahrung, immer neugierig und lernbegierig",
     "description": "Ich baue skalierbare, saubere und effiziente Webanwendungen",
     "contact": "Kontakt",
-    "downloadResume": "Lebenslauf herunterladen"
+    "downloadResume": "Lebenslauf herunterladen",
+    "resumeEn": "Englische Version",
+    "resumeDe": "Deutsche Version",
+    "resumeFa": "Persische Version"
   },
   "nav": {
     "home": "Startseite",

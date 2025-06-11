@@ -1,14 +1,17 @@
 <template>
-
   <section 
     id="about"
     ref="aboutSection"
     class="py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden"
   >
     <div class="container mx-auto px-6 md:px-12">
+      <h2 class="text-4xl font-extrabold mb-20 text-gray-900 dark:text-white text-center">
+        {{ $t('about.title') }}
+      </h2>
       <div class="flex flex-col md:flex-row items-center gap-12">
 
-        <!-- تصویر پروفایل -->
+
+        <!-- Profile Image with gradient glow -->
         <div 
           class="relative group w-64 h-64 md:w-80 md:h-80 shrink-0 mx-auto"
           :class="{'opacity-100 scale-100': isImageVisible, 'opacity-0 scale-95': !isImageVisible}"
@@ -17,21 +20,19 @@
           <div class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-300 via-blue-300 to-pink-300 dark:from-purple-900 dark:via-blue-900 dark:to-pink-900 blur-2xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
           <img
             src="/images/ehsan.jfif"
-            alt="احسان جلیلوند"
+            alt="ehsan jalilvand"
             class="rounded-full object-cover w-full h-full border-4 border-white dark:border-gray-800 shadow-xl transition duration-500 group-hover:scale-105"
             loading="lazy"
           />
         </div>
 
-        <!-- متن -->
+        <!-- Text Content -->
         <div 
           class="flex-1 space-y-8"
           :class="{ 'opacity-100 translate-x-0': isTextVisible, 'opacity-0 translate-x-10': !isTextVisible }"
           style="transition: opacity 0.7s ease, transform 0.7s ease;"
         >
-          <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight relative">
-            {{ $t('about.title') }}
-          </h2>
+
 
           <div class="space-y-5 text-gray-700 dark:text-gray-300 text-justify">
             <p 
@@ -44,7 +45,6 @@
             </p>
           </div>
 
-          <!-- علایق -->
           <div>
             <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
               {{ $t('about.interestsTitle') }}
@@ -68,41 +68,55 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue';
-const { locale, messages } = useI18n();
 
+import { useI18n } from 'vue-i18n';
+
+const { locale, messages } = useI18n();
 const aboutSection = ref(null);
+
+// Reactive flags to control visibility and animation states
 const isImageVisible = ref(false);
 const isTextVisible = ref(false);
 
+// Computed properties for paragraphs and interests from i18n messages
 const aboutParagraphs = computed(() => messages.value[locale.value].about.paragraphs.map(p => p.body.static));
 const aboutInterests = computed(() => messages.value[locale.value].about.interests.map(p => p.body.static));
 
-const checkVisibility = () => {
-  if (!aboutSection.value) return;
+let observer = null;
 
-  const rect = aboutSection.value.getBoundingClientRect();
-  const visible = rect.top < window.innerHeight * 0.85;
-
-  if (visible) {
+/**
+ * Intersection Observer callback function
+ * Toggles visibility flags when the about section enters or leaves the viewport
+ */
+const handleIntersect = (entries) => {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    // Section is visible: show image immediately, then text with delay
     isImageVisible.value = true;
-
-    // متن رو با کمی تاخیر نمایش بده
     setTimeout(() => {
       isTextVisible.value = true;
     }, 300);
-  } else {
-    isImageVisible.value = false;
-    isTextVisible.value = false;
-  }
+  } 
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', checkVisibility);
-  checkVisibility();
+  // Initialize IntersectionObserver with 15% visibility threshold
+  observer = new IntersectionObserver(handleIntersect, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15,
+  });
+
+  if (aboutSection.value) {
+    observer.observe(aboutSection.value);
+  }
 });
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', checkVisibility);
+onBeforeUnmount(() => {
+  // Cleanup observer to avoid memory leaks
+  if (observer && aboutSection.value) {
+    observer.unobserve(aboutSection.value);
+    observer.disconnect();
+  }
 });
 </script>

@@ -35,7 +35,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
 import {
   Database,
   ShieldCheck,
@@ -45,56 +44,68 @@ import {
   LayoutDashboard,
   Braces
 } from 'lucide-vue-next'
-
 import { CpuChipIcon, CommandLineIcon, RocketLaunchIcon, LanguageIcon } from '@heroicons/vue/24/outline'
 
+// Reference to the skills section DOM element
 const skillsSection = ref(null)
+// State to track visibility of the skills section
 const isVisible = ref(false)
 
+// List of skills with associated icons
 const skills = [
   { name: 'ASP.NET Core WebAPI / Hangfire / Quartz.NET', icon: Network },
   { name: 'OAuth2 / JWT', icon: ShieldCheck },
   { name: 'Microservices Architecture (RabbitMQ, gRPC, CQRS)', icon: Cloud },
   { name: 'Backend Security Controls', icon: ShieldCheck },
   { name: 'Clean Architecture / Mediator Pattern', icon: Braces },
-  
   { name: 'Docker & CI/CD Pipelines', icon: RocketLaunchIcon },
-
   { name: 'SQL Server & Relational Database Design', icon: Database },
-
-   { name: 'Node.js / Express / MongoDB', icon: CpuChipIcon },
+  { name: 'Node.js / Express / MongoDB', icon: CpuChipIcon },
   { name: 'Vue.js / Nuxt.js', icon: CommandLineIcon },
-
   { name: 'Windows Forms / WPF / MVVM', icon: LayoutDashboard },
-
-{ name: 'Git / Version Control & Agile / Scrum', icon: GitBranch },
- 
-
+  { name: 'Git / Version Control & Agile / Scrum', icon: GitBranch },
   { name: 'English (Reading/Writing) & German (B2)', icon: LanguageIcon }
 ]
 
-
-const checkVisibility = () => {
-  if (skillsSection.value) {
-    const rect = skillsSection.value.getBoundingClientRect()
-    isVisible.value = rect.top < window.innerHeight * 0.8
-  }
-}
+// IntersectionObserver instance
+let observer = null
 
 onMounted(() => {
-  window.addEventListener('scroll', checkVisibility)
-  checkVisibility()
+  // Only run on client and if IntersectionObserver is supported
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window && skillsSection.value) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        // If the skills section is intersecting viewport, set visibility to true
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            isVisible.value = true
+            observer.unobserve(entry.target) // Unobserve after first reveal
+          }
+        })
+      },
+      {
+        root: null, // viewport
+        threshold: 0.2 // 20% visible triggers visibility
+      }
+    )
+    observer.observe(skillsSection.value)
+  } else {
+    // Fallback: if no IntersectionObserver, show content immediately
+    isVisible.value = true
+  }
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkVisibility)
+  if (observer && skillsSection.value) {
+    observer.unobserve(skillsSection.value)
+  }
 })
 </script>
 
 <style scoped>
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition: all 0.6s ease;
+  transition: all 1.5s ease;
 }
 .fade-slide-enter-from {
   opacity: 0;
