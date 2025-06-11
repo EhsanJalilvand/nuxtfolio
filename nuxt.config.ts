@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
-    '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -18,8 +17,8 @@ export default defineNuxtConfig({
   '~/plugins/intersect.js'
 ],
    colorMode: {
-    classSuffix: '', // مهم: باید خالی باشد
-    preference: 'system', // یا 'light'/'dark'
+    classSuffix: '', 
+    preference: 'system', 
     storageKey: 'nuxt-color-mode'
   },
   i18n: {
