@@ -10,19 +10,19 @@
             <div>
               <label for="name" class="block mb-2">{{ $t('contact.form.name') }}</label>
               <input id="name" v-model="form.name" type="text"
-                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary" required>
+                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary text-gray-800" required>
             </div>
 
             <div>
               <label for="email" class="block mb-2">{{ $t('contact.form.email') }}</label>
               <input id="email" v-model="form.email" type="email"
-                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary" required>
+                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary text-gray-800" required>
             </div>
 
             <div>
               <label for="message" class="block mb-2">{{ $t('contact.form.message') }}</label>
               <textarea id="message" v-model="form.message" rows="5"
-                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary" required></textarea>
+                class="w-full px-4 py-2 rounded-lg border focus:ring-primary focus:border-primary text-gray-800" required></textarea>
             </div>
 
             <button type="submit"
@@ -60,13 +60,13 @@
 </template>
 
 <script setup>
-
+import { useToast } from 'vue-toastification'
 const form = reactive({
   name: '',
   email: '',
   message: ''
 })
-
+const toast = useToast()
 const submitForm = async () => {
   console.log('Form submitted:', form)
   await $fetch('/api/contact', {
@@ -76,7 +76,8 @@ const submitForm = async () => {
   form.name = ''
   form.email = ''
   form.message = ''
-  // Show success message
-  alert('Message sent successfully!')
+  toast.success('Message sent successfully!', {
+    timeout: 3000
+  })
 }
 </script>
