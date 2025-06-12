@@ -1,7 +1,8 @@
 export default defineNuxtConfig({
     components: true,
     css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '@/assets/css/fonts.css',
   ],
   modules: [
     '@nuxtjs/i18n',

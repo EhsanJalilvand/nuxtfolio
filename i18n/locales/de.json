@@ -19,7 +19,7 @@
   },
   "footer": {
     "title": "Portfolio",
-    "description": "Ein leidenschaftlicher Frontend-Entwickler, der moderne Web-Erlebnisse schafft.",
+    "description": "Ein leidenschaftlicher Backend-Entwickler, der moderne Web-Erlebnisse schafft.",
     "quickLinks": "Schnellzugriff",
     "contact": "Kontakt",
     "copyright": "Alle Rechte vorbehalten."
@@ -111,7 +111,7 @@
     "github": "GitHub",
     "preview": "Vorschau",
     "originalCertificate": "Originalzertifikat",
-    "certificate": "Beglaubigte Übersetzung"
+    "certificate": "Übersetzung"
   },
   "contact": {
     "title": "Kontakt",

@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-colors duration-300">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+  <header  class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-colors duration-300">
+    <div dir="ltr" class="container mx-auto px-4 py-3 flex justify-between items-center">
       <!-- لوگو/نام -->
       <NuxtLink 
         to="/" 

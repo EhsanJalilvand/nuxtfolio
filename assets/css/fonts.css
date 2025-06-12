@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('@/assets/fonts/Vazirmatn-Regular.woff2') format('woff2'),
+       url('@/assets/fonts/Vazirmatn-Medium.woff') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Vazir', sans-serif;
+}

@@ -111,7 +111,7 @@ const projects = [
   },
   {
     title: 'DorTaak Store App',
-    description: 'C#, WPF, Prism, SQL Server, Entity Framework',
+    description: 'C#, WPF, SQL Server, Entity Framework',
     certificate: '/Software-Registrierungszertifikat2.pdf',
     originalCertificate: '/Software-Registrierungszertifikat2.pdf',
     icon: Store,

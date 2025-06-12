@@ -19,7 +19,7 @@
           show[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         ]" :style="{ transitionDelay: (index * 70) + 'ms' }">
           <!-- Skill Icon -->
-          <component :is="skill.icon" class="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3" />
+          <component :is="skill.icon" class="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3 rtl:ml-3" />
           <!-- Skill Name -->
           <span class="text-gray-800 dark:text-gray-200 font-medium">{{ skill.name }}</span>
         </div>

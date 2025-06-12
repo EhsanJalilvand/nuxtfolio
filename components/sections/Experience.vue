@@ -11,7 +11,8 @@
       <!-- Timeline Container -->
       <div class="relative pl-12 w-full max-w-4xl mx-auto">
         <!-- Vertical Line -->
-        <div class="absolute top-0 left-4 w-1 bg-indigo-500 dark:bg-indigo-400 h-full rounded"></div>
+        <div   class="absolute top-0 w-1 bg-indigo-500 dark:bg-indigo-400 h-full rounded"
+               :class="locale === 'fa' ? 'right-4' : 'left-4'"></div>
 
         <!-- Timeline Items with Transition Group -->
         <transition-group name="fade-slide-vertical" tag="div" class="flex flex-col gap-20 relative z-10">
@@ -74,7 +75,6 @@
 <script setup>
 // Import vue-i18n composable
 import { useI18n } from 'vue-i18n'
-
 // Access i18n instance
 const { locale, getLocaleMessage } = useI18n()
 
@@ -114,8 +114,12 @@ function formatDateDisplay(dateStr) {
   if (!dateStr) return ''
   const d = new Date(dateStr)
   if (isNaN(d)) return ''
-  return d.toLocaleDateString('en-GB', { year: 'numeric', month: 'short' })
+  return d.toLocaleDateString(locale.value === 'fa' ? 'fa-IR' : 'en-GB', {
+    year: 'numeric',
+    month: 'short'
+  })
 }
+
 
 /**
  * Build a date range string (startDate - endDate)

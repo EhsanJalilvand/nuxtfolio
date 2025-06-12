@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-gray-900">
+  <div     :dir="locale === 'fa' ? 'rtl' : 'ltr'"  class="min-h-screen bg-white dark:bg-gray-900">
     <SharedHeader />
     <main>
       <NuxtPage />
@@ -7,7 +7,9 @@
     <SharedFooter />
   </div>
 </template>
-
+<script setup>
+const { locale } = useI18n()
+</script>
 <style>
 /* Basic animations */
 .animate-fade-in {

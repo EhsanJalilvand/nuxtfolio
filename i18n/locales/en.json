@@ -19,7 +19,7 @@
   },
   "footer": {
     "title": "Portfolio",
-    "description": "A passionate frontend developer creating modern web experiences.",
+    "description": "A passionate backend developer creating modern web experiences.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
     "copyright": "All rights reserved."
@@ -111,7 +111,7 @@
     "github": "GitHub",
     "preview": "Preview",
     "originalCertificate": "Certificate",
-    "certificate": "Notarized Translation"
+    "certificate": "Translation"
   },
   "contact": {
     "title": "Contact Me",
