@@ -1,4 +1,5 @@
 <template>
+  <!-- Projects Section -->
   <section
     id="projects"
     class="py-20 bg-gray-50 dark:bg-gray-950 overflow-hidden"
@@ -9,12 +10,13 @@
         {{ $t('projects.title') }}
       </h2>
 
-      <!-- Projects Grid -->
+      <!-- Projects Grid with transition group -->
       <TransitionGroup
         name="fade-only"
         tag="div"
         class="flex flex-wrap justify-center gap-8"
       >
+        <!-- Project Card -->
         <div
           v-for="(project, index) in projects"
           :key="project.title"
@@ -28,23 +30,24 @@
 
           :style="{ transitionDelay: (index * 200) + 'ms' }"
         >
-          <!-- Icon -->
+          <!-- Project Icon -->
           <div class="text-5xl text-blue-600 mb-3">
             <component :is="project.icon" />
           </div>
 
-          <!-- Title -->
+          <!-- Project Title -->
           <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">
             {{ project.title }}
           </h3>
 
-          <!-- Description -->
+          <!-- Project Description -->
           <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
             {{ project.description }}
           </p>
 
-          <!-- Action Buttons -->
+          <!-- Project Action Buttons -->
           <div class="flex flex-wrap gap-3">
+            <!-- GitHub Link -->
             <a
               v-if="project.github"
               :href="project.github"
@@ -54,6 +57,7 @@
               <Github class="w-4 h-4" /> {{ $t('projects.github') }}
             </a>
 
+            <!-- Live Preview Link -->
             <a
               v-if="project.preview"
               :href="project.preview"
@@ -63,6 +67,7 @@
               <ExternalLink class="w-4 h-4" /> {{ $t('projects.preview') }}
             </a>
 
+            <!-- Original Certificate Download -->
             <a
               v-if="project.originalCertificate"
               :href="project.originalCertificate"
@@ -72,6 +77,7 @@
               <Download class="w-4 h-4" />{{ $t('projects.originalCertificate') }}
             </a>
 
+            <!-- Certificate Download -->
             <a
               v-if="project.certificate"
               :href="project.certificate"
@@ -88,7 +94,7 @@
 </template>
 
 <script setup>
-// Import icons
+// Import icons for projects
 import {
   Building2,
   Store,
@@ -100,7 +106,7 @@ import {
   Download
 } from 'lucide-vue-next'
 
-// List of all projects
+// Define projects list
 const projects = [
   {
     title: 'General Civil Software Saina',
@@ -139,12 +145,12 @@ const projects = [
   },
 ]
 
-// Track visibility for each project card
+// Track visibility of each project card for animation
 const show = ref(Array(projects.length).fill(false))
 </script>
 
 <style scoped>
-/* Fade-only transition */
+/* Fade-only transition styles */
 .fade-only-enter-from {
   opacity: 0;
   transform: translateY(20px);

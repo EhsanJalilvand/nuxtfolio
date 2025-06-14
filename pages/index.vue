@@ -11,7 +11,7 @@
 
 <script setup>
 useHead({
-  title: 'Your Name | Portfolio',
+  title: 'Nuxfolio',
   meta: [
     { name: 'description', content: 'Professional portfolio showcasing my work and skills' }
   ]

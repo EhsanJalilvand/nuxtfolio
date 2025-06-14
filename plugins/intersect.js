@@ -7,9 +7,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     mounted(el, binding) {
 
       // Define observer options
-      // Use the argument passed to the directive as threshold (if exists), otherwise default to 0.15
       const options = {
-        threshold: binding.arg ? parseFloat(binding.arg) : 0.15,  // ← 15% visible by default
+        threshold: binding.arg ? parseFloat(binding.arg) : 0.15,  //  15% visible by default
       };
 
       // Create a new IntersectionObserver instance - this will observe the visibility of the element
