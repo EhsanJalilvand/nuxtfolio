@@ -53,7 +53,7 @@
             >
               <!-- Download options -->
               <button
-                @click="downloadResume('/resume-en.pdf', 'Ehsan_Jalilvand_EN.pdf')"
+                @click="downloadResume('/resume.txt', 'resume.txt')"
                 class="flex items-center gap-2 px-4 py-2 whitespace-nowrap text-left hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <FileText class="w-5 h-5 text-gray-600 dark:text-gray-300" />
@@ -61,7 +61,7 @@
               </button>
 
               <button
-                @click="downloadResume('/resume-de.pdf', 'Ehsan_Jalilvand_DE.pdf')"
+                   @click="downloadResume('/resume.txt', 'resume.txt')"
                 class="flex items-center gap-2 px-4 py-2 whitespace-nowrap text-left hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <FileText class="w-5 h-5 text-gray-600 dark:text-gray-300" />
@@ -69,7 +69,7 @@
               </button>
 
               <button
-                @click="downloadResume('/resume-fa.pdf', 'Ehsan_Jalilvand_FA.pdf')"
+                   @click="downloadResume('/resume.txt', 'resume.txt')"
                 class="flex items-center gap-2 px-4 py-2 whitespace-nowrap text-left hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <FileText class="w-5 h-5 text-gray-600 dark:text-gray-300" />

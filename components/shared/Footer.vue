@@ -41,19 +41,19 @@
             <li class="flex items-start gap-3">
               <Icon name="heroicons:envelope" class="w-5 h-5 mt-0.5 text-primary" />
               <a href="mailto:contact@example.com" class=" hover:underline">
-                ehsan.jalilvand.dev@gmail.com
+                info@yourdomain.com
               </a>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="heroicons:phone" class="w-5 h-5 mt-0.5 text-primary" />
-              <a href="tel:+989124346824" class=" hover:underline">
-                +98 912 434 6824
+              <a href="tel:+1234567890" class=" hover:underline">
+                +1 234 567 890
               </a>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:telegram" class="w-5 h-5 mt-0.5 text-primary" />
-              <a href="https://t.me/Ehsan_jalilvand" target="_blank" rel="noopener" class="hover:underline">
-                t.me/Ehsan_jalilvand
+              <a href="https://t.me/yourId" target="_blank" rel="noopener" class="hover:underline">
+                t.me/yourId
               </a>
             </li>
           </ul>
@@ -78,9 +78,9 @@ const navItems = [
 ]
 
 const socialLinks = [
-  { name: 'GitHub', icon: 'mdi:github', url: 'https://github.com/EhsanJalilvand/' },
-  { name: 'LinkedIn', icon: 'mdi:linkedin', url: 'https://www.linkedin.com/in/ehsan-jalilvand/' },
-  { name: 'Instagram', icon: 'mdi:instagram', url: 'https://www.instagram.com/ehsan.jalilvand.dev/' }
+  { name: 'GitHub', icon: 'mdi:github', url: 'https://github.com/yourId/' },
+  { name: 'LinkedIn', icon: 'mdi:linkedin', url: 'https://www.linkedin.com/in/yourId/' },
+  { name: 'Instagram', icon: 'mdi:instagram', url: 'https://www.instagram.com/yourId/' }
 ]
 
 // smooth Scroll

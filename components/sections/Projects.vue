@@ -96,52 +96,52 @@
 <script setup>
 // Import icons for projects
 import {
-  Building2,
   Store,
-  Link2,
-  Gamepad2,
   LayoutDashboard,
   Github,
   ExternalLink,
-  Download
+  Clock,
+  Download,
+  FileText,
+  BookOpen
 } from 'lucide-vue-next'
 
 // Define projects list
 const projects = [
   {
-    title: 'General Civil Software Saina',
-    description: 'C#, Windows Forms, SQL Server, ADO.NET',
-    certificate: '/Software-Registrierungszertifikat1.pdf',
-    originalCertificate: '/Software-Registrierungszertifikat1.pdf',
-    icon: Building2,
+    title: 'TaskFlow Project Manager',
+    description: 'ASP.NET Core, EF Core, PostgreSQL, JWT Auth',
+    certificate: '/certificate.txt',
+    originalCertificate: '/certificate.txt',
+    icon: LayoutDashboard,
   },
   {
-    title: 'DorTaak Store App',
-    description: 'C#, WPF, SQL Server, Entity Framework',
-    certificate: '/Software-Registrierungszertifikat2.pdf',
-    originalCertificate: '/Software-Registrierungszertifikat2.pdf',
+    title: 'GreenGarden Ecommerce',
+    description: 'Vue 3, Nuxt 3, Pinia, Stripe API, Tailwind CSS',
+   certificate: '/certificate.txt',
+    originalCertificate: '/certificate.txt',
     icon: Store,
   },
   {
-    title: 'Snaplink',
-    description: 'Node.js, Express, MongoDB',
-    github: 'https://github.com/EhsanJalilvand/SnapLink',
-    preview: 'https://snaplink.ink/',
-    icon: Link2,
+    title: 'NodeCron Job Scheduler',
+    description: 'Node.js, Express, MongoDB, Node-Cron, JWT Auth',
+    github: 'https://github.com/example/nodecron-scheduler',
+    preview: 'https://nodecron.example.com',
+    icon: Clock,
   },
   {
-    title: 'Memory Game',
-    description: 'Vue 3, Pinia, Composition API',
-    github: 'https://github.com/ehsan/vue-memory-game',
-    preview: 'https://memorygame.example.com',
-    icon: Gamepad2,
+    title: 'VueInvoice Pro',
+    description: 'Vue 3, Composition API, Chart.js, Tailwind CSS',
+    github: 'https://github.com/example/vue-invoice-pro',
+    preview: 'https://invoicepro.example.com',
+    icon: FileText,
   },
   {
-    title: 'Nuxtfolio',
-    description: 'Nuxt 3, Tailwind, i18n',
-    github: 'https://github.com/ehsan/nuxtfolio',
-    preview: 'https://nuxtfolio.example.com',
-    icon: LayoutDashboard,
+    title: 'DevNotes Markdown Editor',
+    description: 'React, Vite, Tailwind CSS, LocalStorage',
+    github: 'https://github.com/example/devnotes',
+    preview: 'https://devnotes.example.com',
+    icon: BookOpen,
   },
 ]
 

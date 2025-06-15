@@ -16,7 +16,7 @@
         >
           <div class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-300 via-blue-300 to-pink-300 dark:from-purple-900 dark:via-blue-900 dark:to-pink-900 blur-2xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
           <img
-            src="/images/ehsan.jfif"
+            src="/images/person.jpeg"
             alt="ehsan jalilvand"
             class="rounded-full object-cover w-full h-full border-4 border-white dark:border-gray-800 shadow-xl transition duration-500 group-hover:scale-105"
             loading="lazy"

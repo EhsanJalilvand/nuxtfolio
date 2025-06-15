@@ -41,7 +41,7 @@
             <Icon name="mdi:email" class="w-6 h-6 mt-1 text-primary" />
             <div>
               <h3 class="text-lg font-semibold">{{ $t('contact.info.email') }}</h3>
-              <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-300">ehsan.jalilvand.dev@gmail.com</a>
+              <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-300">info@yourdomain.com</a>
             </div>
           </div>
 
@@ -49,7 +49,7 @@
             <Icon name="mdi:phone" class="w-6 h-6 mt-1 text-primary" />
             <div>
               <h3 class="text-lg font-semibold">{{ $t('contact.info.phone') }}</h3>
-              <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-300">+98 912 434 6824</a>
+              <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-300">+1 234 567 890</a>
             </div>
           </div>
 
