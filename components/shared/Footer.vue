@@ -1,9 +1,9 @@
 <template>
   <footer class=" dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto dark:text-gray-300">
     <div class="container mx-auto px-4 py-12">
-      <!-- بخش اصلی فوتر -->
+      <!-- Main footer Section -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <!-- درباره من -->
+        <!-- About-->
         <div class="md:col-span-2">
           <div class="flex items-center gap-2 mb-4">
             <Icon name="heroicons:sparkles" class="w-6 h-6 text-primary" />
@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <!-- لینک‌های سریع -->
+        <!-- QuickLink-->
         <div>
           <h3 class="text-lg font-semibold mb-4">{{ $t('footer.quickLinks') }}</h3>
           <ul class="space-y-2">
@@ -34,7 +34,7 @@
           </ul>
         </div>
 
-        <!-- اطلاعات تماس -->
+        <!-- Contact-->
         <div>
           <h3 class="text-lg font-semibold mb-4">{{ $t('footer.contact') }}</h3>
           <ul class="space-y-3">
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <!-- کپی رایت -->
+      <!-- Copyright-->
       <div class="border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-gray-500 dark:text-gray-400">
         &copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}
       </div>
@@ -69,7 +69,6 @@
 </template>
 
 <script setup>
-// استفاده از همان navItems که در هدر تعریف شده
 const navItems = [
   { key: 'about', path: '#about' },
   { key: 'experience', path: '#experience' },
@@ -84,21 +83,11 @@ const socialLinks = [
   { name: 'Instagram', icon: 'mdi:instagram', url: 'https://www.instagram.com/ehsan.jalilvand.dev/' }
 ]
 
-// تابع اسکرول مشابه هدر
-const scrollTo = (id) => {
-  const el = document.querySelector(id)
-  if (el) {
-    window.scrollTo({
-      top: el.offsetTop - 80,
-      behavior: 'smooth'
-    })
-    history.pushState(null, null, id)
-  }
-}
+// smooth Scroll
+const { scrollTo } = useScrollTo()
 </script>
 
 <style scoped>
-/* انیمیشن hover برای آیکون‌های اجتماعی */
 a:hover svg {
   transform: translateY(-3px);
   transition: transform 0.2s ease;

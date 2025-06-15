@@ -1,39 +1,54 @@
 <template>
-  <div 
-    class="fixed w-8 h-8 rounded-full bg-primary/20 border-2 border-primary pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-50 mix-blend-difference"
-    :style="{
-      left: `${position.x}px`,
-      top: `${position.y}px`,
-      transform: `translate(-50%, -50%) scale(${isClicking ? 0.8 : 1})`
-    }"
-  ></div>
+  <!-- Pulse effect on click -->
+  <div ref="clickPulse" class="click-pulse" />
 </template>
 
 <script setup>
-const position = ref({ x: 0, y: 0 })
-const isClicking = ref(false)
+import { ref, onMounted, onUnmounted } from 'vue'
+import gsap from 'gsap'
 
-const updateCursorPosition = (e) => {
-  position.value = { x: e.clientX, y: e.clientY }
-}
+const clickPulse = ref(null)
 
-const handleMouseDown = () => {
-  isClicking.value = true
-}
+const handleClick = (e) => {
+  // Position the pulse div at click position
+  const pulse = clickPulse.value
+  pulse.style.left = e.clientX + 'px'
+  pulse.style.top = e.clientY + 'px'
 
-const handleMouseUp = () => {
-  isClicking.value = false
+  // Animate scale up and fade out
+  gsap.fromTo(
+    pulse,
+    { scale: 0, opacity: 0.6 },
+    {
+      scale: 2,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power1.out',
+      overwrite: 'auto',
+    }
+  )
 }
 
 onMounted(() => {
-  window.addEventListener('mousemove', updateCursorPosition)
-  window.addEventListener('mousedown', handleMouseDown)
-  window.addEventListener('mouseup', handleMouseUp)
+  window.addEventListener('click', handleClick)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('mousemove', updateCursorPosition)
-  window.removeEventListener('mousedown', handleMouseDown)
-  window.removeEventListener('mouseup', handleMouseUp)
+  window.removeEventListener('click', handleClick)
 })
 </script>
+
+<style scoped>
+.click-pulse {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 2px solid #106ab9;
+  background-color: transparent;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: 9999;
+}
+</style>

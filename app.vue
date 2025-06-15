@@ -1,6 +1,7 @@
 <template>
   <div     :dir="locale === 'fa' ? 'rtl' : 'ltr'"  class="min-h-screen bg-white dark:bg-gray-900">
     <SharedHeader />
+    <UiCustomCursor />
     <main>
       <NuxtPage />
     </main>

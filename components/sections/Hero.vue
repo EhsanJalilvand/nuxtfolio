@@ -1,4 +1,5 @@
 <template>
+
   <!-- Full-screen hero section -->
   <div
     class="relative h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white"

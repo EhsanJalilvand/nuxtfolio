@@ -8,6 +8,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    background-image: linear-gradient(to right, #3B82F6, #10B981); /* استفاده مستقیم از مقادیر HEX */
+    background-image: linear-gradient(to right, #3B82F6, #10B981);
   }
 }
