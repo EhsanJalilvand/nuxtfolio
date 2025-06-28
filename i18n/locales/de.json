@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "title": "Hallo, ich bin [Ihr Name]",
+    "subtitle": "Ein leidenschaftlicher Full-Stack-Entwickler",
+    "description": "Ich erstelle moderne, saubere und effiziente Webanwendungen.",
+    "contact": "Kontakt aufnehmen",
+    "downloadResume": "Lebenslauf herunterladen",
+    "resumeEn": "Englische Version",
+    "resumeDe": "Deutsche Version",
+    "resumeFa": "Persische Version"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt",
+    "experience": "Erfahrung"
+  },
+  "footer": {
+    "title": "Portfolio",
+    "description": "Ein Backend-Entwickler für moderne Weblösungen.",
+    "quickLinks": "Schnellzugriff",
+    "contact": "Kontakt",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "about": {
+    "title": "Über mich",
+    "paragraphs": [
+      "Ich bin ein Entwickler, der gerne nützliche Tools und Anwendungen baut.",
+      "Ich habe mit C# und SQL Server an der Universität mit dem Programmieren begonnen.",
+      "Ich liebe es, Probleme zu lösen und neue Ideen auszuprobieren.",
+      "In meiner Freizeit genieße ich die Natur und die Pflege von Pflanzen."
+    ],
+    "interestsTitle": "Meine Interessen",
+    "interests": [
+      "Programmieren",
+      "Technik-Gadgets",
+      "Natur",
+      "Lernen",
+      "DIY-Projekte"
+    ]
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "subtitle": "Die Tools und Technologien, mit denen ich arbeite",
+    "description": "Technologien, in denen ich erfahren bin"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "items": [
+      {
+        "id": 1,
+        "position": "Senior .NET Entwickler",
+        "company": "Beispiel GmbH",
+        "location": "Stadt, Land",
+        "startDate": "2020-01-01",
+        "endDate": null,
+        "description": [
+          "Webanwendungen und Backend-Dienste entwickelt.",
+          "Echtzeit-Datenverarbeitungssysteme erstellt."
+        ]
+      },
+      {
+        "id": 2,
+        "position": "Full-Stack Entwickler",
+        "company": "SampleTech",
+        "location": "Stadt, Land",
+        "startDate": "2017-09-01",
+        "endDate": "2019-09-30",
+        "description": [
+          "CRM-Integrations-Tools erstellt.",
+          "Systemleistung und Stabilität verbessert."
+        ]
+      },
+      {
+        "id": 3,
+        "position": "Softwareentwickler",
+        "company": "Tech Solutions",
+        "location": "Stadt, Land",
+        "startDate": "2013-06-01",
+        "endDate": "2017-01-31",
+        "description": [
+          "Desktop-Anwendungen entworfen und gewartet.",
+          "Module für Finanzsoftware entwickelt."
+        ]
+      },
+      {
+        "id": 4,
+        "position": "Windows-Anwendungsentwickler",
+        "company": "Freelance",
+        "location": "Stadt, Land",
+        "startDate": "2010-01-01",
+        "endDate": "2012-12-31",
+        "description": [
+          "Software für kleine Unternehmen entwickelt.",
+          "Bestehende Projekte betreut."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "github": "GitHub",
+    "preview": "Vorschau",
+    "originalCertificate": "Original-Zertifikat",
+    "certificate": "Übersetzung"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden"
+    },
+    "info": {
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Ort"
+    }
+  }
+}

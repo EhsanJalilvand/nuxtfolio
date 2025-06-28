@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "title": "Hi, I'm [Your Name]",
+    "subtitle": "A passionate full-stack developer",
+    "description": "I build modern, clean and efficient web applications.",
+    "contact": "Contact Me",
+    "downloadResume": "Download Resume",
+    "resumeEn": "English Version",
+    "resumeDe": "German Version",
+    "resumeFa": "Persian Version"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "experience": "Experience"
+  },
+  "footer": {
+    "title": "Portfolio",
+    "description": "A backend developer creating modern web solutions.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "All rights reserved."
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I'm a developer who enjoys building useful tools and applications.",
+      "I started programming in university with C# and SQL Server.",
+      "I like creating tools, solving problems and exploring new ideas.",
+      "Outside work, I enjoy nature and working with plants."
+    ],
+    "interestsTitle": "My Interests",
+    "interests": [
+      "Coding",
+      "Tech Gadgets",
+      "Nature",
+      "Learning",
+      "DIY Projects"
+    ]
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "The tools and technologies I work with",
+    "description": "Technologies I'm proficient with"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "position": "Senior .NET Developer",
+        "company": "Example Corp",
+        "location": "City, Country",
+        "startDate": "2020-01-01",
+        "endDate": null,
+        "description": [
+          "Developed web applications and backend services.",
+          "Built real-time data processing systems."
+        ]
+      },
+      {
+        "position": "Full Stack Developer",
+        "company": "SampleTech",
+        "location": "City, Country",
+        "startDate": "2017-09-01",
+        "endDate": "2019-09-30",
+        "description": [
+          "Created CRM integration tools.",
+          "Enhanced system reliability and performance."
+        ]
+      },
+      {
+        "position": "Software Developer",
+        "company": "Tech Solutions Co.",
+        "location": "City, Country",
+        "startDate": "2013-06-01",
+        "endDate": "2017-01-31",
+        "description": [
+          "Designed and maintained desktop applications.",
+          "Worked on financial software modules."
+        ]
+      },
+      {
+        "position": "Windows Application Developer",
+        "company": "Freelance",
+        "location": "City, Country",
+        "startDate": "2010-01-01",
+        "endDate": "2012-12-31",
+        "description": [
+          "Developed small business software.",
+          "Maintained existing projects."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "github": "GitHub",
+    "preview": "Preview",
+    "originalCertificate": "Certificate",
+    "certificate": "Translation"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  }
+}
