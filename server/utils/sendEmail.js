@@ -4,7 +4,7 @@ import { SMTPClient } from 'emailjs'
 export const sendEmailMessage = async (body) => {
 const config = useRuntimeConfig()
 
-if (!config.EMAIL_USER || !config.EMAIL_PASS || !config.EMAIL_TO) {
+if (!config.emailUser || !config.emailPass || !config.emailTo) {
     console.error('Email configuration is not set in runtime config.')
     return
   }
@@ -14,15 +14,15 @@ if (!config.EMAIL_USER || !config.EMAIL_PASS || !config.EMAIL_TO) {
   }
   // Create SMTP client
   const client = new SMTPClient({
-    user: config.EMAIL_USER,
-    password: config.EMAIL_PASS,
+    user: config.emailUser,
+    password: config.emailPass,
     host: 'smtp.gmail.com',
     ssl: true
   })
 
   await client.sendAsync({
-    from: config.EMAIL_USER,
-    to: config.EMAIL_TO,
+    from: config.emailUser,
+    to: config.emailTo,
     subject: '📬 New Contact Form Submission',
     text: `New contact message from ${body.name} (${body.email}):\n${body.message}`,
     attachment: [
