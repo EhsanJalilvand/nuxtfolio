@@ -1,4 +1,4 @@
-import Toast from 'vue-toastification'
+import Toast, { useToast } from 'vue-toastification'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Toast, {
@@ -9,4 +9,5 @@ export default defineNuxtPlugin((nuxtApp) => {
     draggable: true,
     showCloseButtonOnHover: false,
   })
+    nuxtApp.provide('toast', useToast())
 })
