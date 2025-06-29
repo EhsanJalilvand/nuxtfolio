@@ -56,13 +56,13 @@ Create a `.env` file in the project root:
 
 ```env
 # Telegram Bot config (optional)
-TELEGRAM_BOT_TOKEN=your-telegram-bot-token
-TELEGRAM_CHAT_ID=your-telegram-chat-id
+NUXT_TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+NUXT_TELEGRAM_CHAT_ID=your-telegram-chat-id
 
 # Email config (required for contact form)
-EMAIL_USER=your.email@example.com
-EMAIL_PASS=your-generated-app-password
-EMAIL_TO=recipient@example.com
+NUXT_EMAIL_USER=your.email@example.com
+NUXT_EMAIL_PASS=your-generated-app-password
+NUXT_EMAIL_TO=recipient@example.com
 ```
 
 For Email App Password configuration, check:  
