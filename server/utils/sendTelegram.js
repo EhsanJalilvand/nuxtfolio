@@ -1,8 +1,8 @@
 // Send message to Telegram via Bot API
 export const sendTelegramMessage = async (body) => {
 const config = useRuntimeConfig()
-console.log(config.TELEGRAM_BOT_TOKEN, config.TELEGRAM_CHAT_ID)
-  if (!config.TELEGRAM_BOT_TOKEN || !config.TELEGRAM_CHAT_ID) {
+console.log(config.telegramBotToken, config.telegramChatId)
+  if (!config.telegramBotToken || !config.telegramChatId) {
     console.error('Telegram Bot Token or Chat ID is not set in environment variables.')
     return
   }
@@ -12,8 +12,8 @@ console.log(config.TELEGRAM_BOT_TOKEN, config.TELEGRAM_CHAT_ID)
   }
 
 
-  const token = config.TELEGRAM_BOT_TOKEN
-  const chatId = config.TELEGRAM_CHAT_ID
+  const token = config.telegramBotToken
+  const chatId = config.telegramChatId
 
   const message = `
 📥 New Contact Form Submission:
