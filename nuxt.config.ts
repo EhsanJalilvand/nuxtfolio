@@ -17,11 +17,11 @@ export default defineNuxtConfig({
     '~/plugins/intersect.js'
   ],
   runtimeConfig: {
-    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN || '',
-    TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID  || '',
-    EMAIL_USER: process.env.EMAIL_USER  || '',
-    EMAIL_PASS: process.env.EMAIL_PASS  || '',
-    EMAIL_TO: process.env.EMAIL_TO  || '',
+    telegramBotToken: '',
+    telegramChatId: '',
+    emailUser: '',
+    emailPass: '',
+    emailTo:  '',
   },
   colorMode: {
     classSuffix: '',
